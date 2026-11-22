@@ -27,10 +27,10 @@ jobs:
       - name: Build and push backend image
         uses: docker/build-push-action@v6
         with:
-          context: .
-          file: ./Dockerfile
+          context: ./backend
+          file: ./backend/Dockerfile
           push: true
-          tags: cloudspace/erp-backend:${{ env.TEAM_TAG }}
+          tags: cloudspacev2/erp-backend:${{ env.TEAM_TAG }}
 
       - name: Build and push frontend image
         uses: docker/build-push-action@v6
@@ -38,4 +38,4 @@ jobs:
           context: ./frontend
           file: ./frontend/Dockerfile
           push: true
-          tags: cloudspace/erp-frontend:${{ env.TEAM_TAG }}
+          tags: cloudspacev2/erp-frontend:${{ env.TEAM_TAG }}
